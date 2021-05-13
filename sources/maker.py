@@ -38,12 +38,9 @@ class PizzaMaker:
             return False, 'I don\'t know this pizza'
         ingredients = RECIPES[name]['ingredients']
         price = RECIPES[name]['price']
+        self._gain += price  # Gain money
         error = self.__try_to_get_ingredients(ingredients)
         if error is not None:
             return False, error
-<<<<<<< HEAD
         self.gain += price # Gain money
-=======
-        self.__apply_sauce(RECIPES[name])
->>>>>>> cb77cee (Adding sauce management)
         return True, None
